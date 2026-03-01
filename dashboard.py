@@ -3,18 +3,7 @@ import pandas as pd
 import mysql.connector
 import plotly.express as px
 
-# ---- MySQL Connection ----
-connection = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='root',
-    database='RC'
-)
-
-# ---- Fetch Data from MySQL ----
-query = "SELECT * FROM road_accidents"
-df = pd.read_sql(query, connection)
-connection.close()
+df=pd.read_csv('road_accidents.csv')  # Load your dataset here
 
 # ---- Dashboard UI ----
 st.title("Road Accidents Dashboard")
